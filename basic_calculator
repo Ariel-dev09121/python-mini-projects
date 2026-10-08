@@ -1,0 +1,44 @@
+# Program 2: Basic Calculator
+
+def ask_number(question):
+    """Keeps asking until the user enters a valid number."""
+    while True:
+        answer = input(question)
+        try:
+            return float(answer)
+        except ValueError:
+            print("Please enter a valid number.")
+
+print("===== Basic Calculator =====")
+print("Operations: +  -  *  /")
+
+while True:
+    num1 = ask_number("First number: ")
+    operation = input("Operation (+, -, *, /): ")
+    num2 = ask_number("Second number: ")
+
+    # Decide what to do based on the operation
+    if operation == "+":
+        result = num1 + num2
+    elif operation == "-":
+        result = num1 - num2
+    elif operation == "*":
+        result = num1 * num2
+    elif operation == "/":
+        if num2 == 0:
+            result = None
+            print("Error: you cannot divide by zero.")
+        else:
+            result = num1 / num2
+    else:
+        result = None
+        print("Invalid operation. Use +, -, * or /.")
+
+    # Show the result only if there was no error
+    if result is not None:
+        print(f"Result: {num1} {operation} {num2} = {result}")
+
+    again = input("Another calculation? (yes/no): ").lower()
+    if again != "yes":
+        print("Goodbye!")
+        break
