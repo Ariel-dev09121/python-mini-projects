@@ -8,6 +8,7 @@ My goal: become a remote software developer.
 | # | Project | Concepts |
 |---|---------|----------|
 | 01 | Personal Introduction | variables, functions, loops, input validation |
+| 02 | Basic Calculator | if/elif/else, try/except, functions |
 
 ## How to run
 
